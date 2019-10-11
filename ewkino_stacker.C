@@ -227,8 +227,8 @@ void Get2D_Plot(string hist_name, vector<string> directories, string outFile){
 void ewkino_stacker(string inFile = "KUEwkino_2017_ll_NotOSSF_hists.root"){
  cout << "Running Stacker..." << endl;
  vector<string> bkg_directories{"TTJets", "WJets", "DiBoson", "DYJetsToLL", "ST"};
- vector<string> sig_directories{"TChiWZ_SMS_300_270", "TChiWZ_SMS_300_210"};
- vector<string> directories_2D{"TChiWZ_SMS_300_270", "TChiWZ_SMS_300_210", "TTJets", "WJets", "DiBoson", "DYJetsToLL", "ST"};
+ vector<string> sig_directories{"TChiWW_SMS_275_235"};
+ vector<string> directories_2D{"TChiWW_SMS_275_235", "TTJets", "WJets", "DiBoson", "DYJetsToLL", "ST"};
  vector<int> colors_bkg = { kAzure+1, kGreen-9, kPink, kTeal+2, kYellow-4 };
  vector<int> colors_sig = { kMagenta, kCyan+2, };
 
@@ -254,8 +254,7 @@ void ewkino_stacker(string inFile = "KUEwkino_2017_ll_NotOSSF_hists.root"){
  {
   bkg_Entries+=met_hists_bkg[i]->GetEntries();
  }
- cout << "Zbi TChiWZ_SMS_300_270: " << evaluateZbi(met_hists_sig[0]->GetEntries(),bkg_Entries,10.) << endl << "TChiWZ_SMS_300_270 Events: " << met_hists_sig[0]->GetEntries() << endl;
- cout << "Zbi TChiWZ_SMS_300_210: " << evaluateZbi(met_hists_sig[1]->GetEntries(),bkg_Entries,10.) << endl << "TChiWZ_SMS_300_210 Events: " << met_hists_sig[1]->GetEntries() << endl;
+ cout << "Zbi TChiWW_SMS_275_235: " << evaluateZbi(met_hists_sig[1]->GetEntries(),bkg_Entries,10.) << endl << "TChiWZ_SMS_275_235 Events: " << met_hists_sig[1]->GetEntries() << endl;
  cout << "BKG Events: " << bkg_Entries << endl;
 */
 }

@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Thu Aug 22 12:41:37 2019 by ROOT version 6.10/09
+// Fri Oct 11 15:33:44 2019 by ROOT version 6.10/09
 // from TTree KUAnalysis/KUAnalysis
-// found on file: /home/t3-ku/z374f439/../crogan/NTUPLES/StopNtuple_new/All_Bkg_2017/TTJets_TuneCP5_13TeV-madgraphMLM-pythia8_TuneCP5.root
+// found on file: /home/t3-ku/z374f439/../crogan/NTUPLES/NANO/Fall17_94X/WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8_Fall17_94X.root
 //////////////////////////////////////////////////////////
 
 #ifndef Selector_h
@@ -27,6 +27,7 @@ public :
    TTree          *fChain = 0;   //!pointer to the analyzed TTree or TChain
 
    // Readers to access the data (delete the ones you do not need).
+   TTreeReaderValue<Bool_t> event_skipped = {fReader, "event_skipped"};
    TTreeReaderValue<Double_t> weight = {fReader, "weight"};
    TTreeReaderValue<Double_t> MET = {fReader, "MET"};
    TTreeReaderValue<Double_t> MET_phi = {fReader, "MET_phi"};
@@ -44,16 +45,21 @@ public :
    TTreeReaderArray<int> PDGID_lep = {fReader, "PDGID_lep"};
    TTreeReaderArray<double> RelIso_lep = {fReader, "RelIso_lep"};
    TTreeReaderArray<double> MiniIso_lep = {fReader, "MiniIso_lep"};
+   TTreeReaderArray<double> Dxy_lep = {fReader, "Dxy_lep"};
+   TTreeReaderArray<double> DxyErr_lep = {fReader, "DxyErr_lep"};
+   TTreeReaderArray<double> Dz_lep = {fReader, "Dz_lep"};
+   TTreeReaderArray<double> DzErr_lep = {fReader, "DzErr_lep"};
+   TTreeReaderArray<double> IP3D_lep = {fReader, "IP3D_lep"};
+   TTreeReaderArray<double> SIP3D_lep = {fReader, "SIP3D_lep"};
    TTreeReaderArray<int> ID_lep = {fReader, "ID_lep"};
    TTreeReaderArray<int> Index_lep = {fReader, "Index_lep"};
    TTreeReaderValue<Int_t> Njet = {fReader, "Njet"};
    TTreeReaderValue<Int_t> Nbjet = {fReader, "Nbjet"};
-   TTreeReaderArray<double> PT_jet = {fReader, "PT_jet"};
-   TTreeReaderArray<double> Eta_jet = {fReader, "Eta_jet"};
-   TTreeReaderArray<double> Phi_jet = {fReader, "Phi_jet"};
-   TTreeReaderArray<double> M_jet = {fReader, "M_jet"};
-   TTreeReaderArray<double> Btag_jet = {fReader, "Btag_jet"};
-   TTreeReaderArray<double> Flavor_jet = {fReader, "Flavor_jet"};
+   TTreeReaderValue<Int_t> NSV = {fReader, "NSV"};
+   TTreeReaderArray<double> PT_SV = {fReader, "PT_SV"};
+   TTreeReaderArray<double> Eta_SV = {fReader, "Eta_SV"};
+   TTreeReaderArray<double> Phi_SV = {fReader, "Phi_SV"};
+   TTreeReaderArray<double> M_SV = {fReader, "M_SV"};
    TTreeReaderValue<Int_t> genNele = {fReader, "genNele"};
    TTreeReaderValue<Int_t> genNmu = {fReader, "genNmu"};
    TTreeReaderValue<Int_t> genNlep = {fReader, "genNlep"};
@@ -91,20 +97,26 @@ public :
    TTreeReaderArray<int> Nbjet_S = {fReader, "Nbjet_S"};
    TTreeReaderArray<int> Nlep_ISR = {fReader, "Nlep_ISR"};
    TTreeReaderArray<int> Nlep_S = {fReader, "Nlep_S"};
-   TTreeReaderArray<vector<int>> index_jet_ISR = {fReader, "index_jet_ISR"};
-   TTreeReaderArray<vector<int>> index_jet_S = {fReader, "index_jet_S"};
+   TTreeReaderArray<int> NSV_ISR = {fReader, "NSV_ISR"};
+   TTreeReaderArray<int> NSV_S = {fReader, "NSV_S"};
+   TTreeReaderArray<vector<int>> index_SV_ISR = {fReader, "index_SV_ISR"};
+   TTreeReaderArray<vector<int>> index_SV_S = {fReader, "index_SV_S"};
    TTreeReaderArray<vector<int>> index_lep_ISR = {fReader, "index_lep_ISR"};
    TTreeReaderArray<vector<int>> index_lep_S = {fReader, "index_lep_S"};
+   TTreeReaderArray<vector<double>> dphi_lep_S = {fReader, "dphi_lep_S"};
+   TTreeReaderArray<vector<double>> cos_lep_S = {fReader, "cos_lep_S"};
    TTreeReaderArray<int> Njet_a = {fReader, "Njet_a"};
    TTreeReaderArray<int> Njet_b = {fReader, "Njet_b"};
    TTreeReaderArray<int> Nbjet_a = {fReader, "Nbjet_a"};
    TTreeReaderArray<int> Nbjet_b = {fReader, "Nbjet_b"};
    TTreeReaderArray<int> Nlep_a = {fReader, "Nlep_a"};
    TTreeReaderArray<int> Nlep_b = {fReader, "Nlep_b"};
-   TTreeReaderArray<vector<int>> index_jet_a = {fReader, "index_jet_a"};
-   TTreeReaderArray<vector<int>> index_jet_b = {fReader, "index_jet_b"};
+   TTreeReaderArray<int> NSV_a = {fReader, "NSV_a"};
+   TTreeReaderArray<int> NSV_b = {fReader, "NSV_b"};
    TTreeReaderArray<vector<int>> index_lep_a = {fReader, "index_lep_a"};
    TTreeReaderArray<vector<int>> index_lep_b = {fReader, "index_lep_b"};
+   TTreeReaderArray<vector<int>> index_SV_a = {fReader, "index_SV_a"};
+   TTreeReaderArray<vector<int>> index_SV_b = {fReader, "index_SV_b"};
    TTreeReaderArray<double> PTCM = {fReader, "PTCM"};
    TTreeReaderArray<double> cosCM = {fReader, "cosCM"};
    TTreeReaderArray<double> dphiCM = {fReader, "dphiCM"};
@@ -189,3 +201,4 @@ public :
 };
 
 #endif
+
